@@ -1,0 +1,65 @@
+using System;
+
+namespace calculator_c_sharp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string symbol;
+
+            while (true)
+            {
+                int res;
+
+                Console.Write("Press 0 to exit the program.\n\nEnter first number:");
+                int num1 = Convert.ToInt32(Console.ReadLine());
+
+                // Check if the user wants to exit
+                if (num1 == 0)
+                {
+                    Console.WriteLine("The calculator is closed.");
+                    break;
+                }
+
+                Console.Write("Enter second number:");
+                int num2 = Convert.ToInt32(Console.ReadLine());
+
+                Console.Write("Choose symbol(/,+,-,*):\n+ >> Addition\n- >> Subtraction\n/ >> Division\n* >> Multiplication\n");
+                symbol = Console.ReadLine();
+
+                switch (symbol)
+                {
+                    case "+":
+                        res = num1 + num2;
+                        Console.WriteLine("Sum:" + res);
+                        break;
+                    case "-":
+                        res = num1 - num2;
+                        Console.WriteLine("Difference:" + res);
+                        break;
+                    case "*":
+                        res = num1 * num2;
+                        Console.WriteLine("Product:" + res);
+                        break;
+                    case "/":
+                        res = num1 / num2;
+                        Console.WriteLine("Quotient:" + res);
+                        break;
+                    default:
+                        Console.WriteLine("Invalid symbol. Please try again.");
+                        break;
+                }
+                Console.Write("Do you want to continue? Press 0 if not and press any number to continue.");
+                int num3 = Convert.ToInt32(Console.ReadLine());
+
+                // Check if the user wants to exit
+                if (num3 == 0)
+                {
+                    Console.WriteLine("The calculator is closed.");
+                    break;
+                }
+            }
+        }
+    }
+}
