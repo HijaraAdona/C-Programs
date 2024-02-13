@@ -1,0 +1,101 @@
+using System;
+using System.Reflection;
+
+class Program
+{
+
+    static void Main(string[] args)
+    {
+        bool valid = false;
+        bool inputValid = false;
+
+        while (!valid)
+        {
+            try
+            {
+
+                {
+                    while (!inputValid)
+                    {
+
+                        Console.Write("Ënter grade for 1st Quarter: ");
+                        double firstGrade = Convert.ToDouble(Console.ReadLine());
+                        if (firstGrade < 60)
+                        {
+                            Console.WriteLine("Must be above 60");
+                            break;
+                        }
+                        if (firstGrade > 99)
+                        {
+                            Console.WriteLine("Must be below 99");
+                            break;
+                        }
+                        Console.Write("Ënter grade for 2nd Quarter: ");
+                        double secondGrade = Convert.ToDouble(Console.ReadLine());
+                        if (secondGrade < 60)
+                        {
+                            Console.WriteLine("Must be above 60");
+                            break;
+                        }
+                        if (secondGrade > 99)
+                        {
+                            Console.WriteLine("SMust be below 99");
+                            break;
+                        }
+
+                        Console.Write("Ënter grade for 3rd Quarter: ");
+                        double thirdGrade = Convert.ToDouble(Console.ReadLine());
+                        if (thirdGrade < 60)
+                        {
+                            Console.WriteLine("Must be above 60");
+                            break;
+                        }
+                        if (thirdGrade > 99)
+                        {
+                            Console.WriteLine("Must be below 99");
+                            break;
+                        }
+
+                        Console.Write("Ënter grade for 4th Quarter: ");
+                        double fourthGrade = Convert.ToDouble(Console.ReadLine());
+                        if (fourthGrade < 60)
+                        {
+                            Console.WriteLine("Must be above 60");
+                            break;
+                        }
+                        if (fourthGrade > 99)
+                        {
+                            Console.WriteLine("Must be below 99");
+                            break;
+                        }
+
+                        double gradeSum = firstGrade + secondGrade + thirdGrade + fourthGrade;
+                        string convertedGradeSum = gradeSum.ToString("F2");
+                        Console.WriteLine($"Grade sum: {convertedGradeSum}");
+
+                        double gradeAverage = gradeSum / 4;
+                        string convertedGradeAverage = gradeAverage.ToString("F2");
+                        Console.Write($"Average Remarks: {convertedGradeAverage}");
+
+                        if (gradeAverage >= 75)
+                        {
+                            Console.WriteLine(" Passed");
+
+
+                        }
+                        else
+                        {
+                            Console.WriteLine(" Failed");
+                        }
+                        valid = true;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Invalid input");
+            }
+
+        }
+    }
+}
