@@ -1,0 +1,104 @@
+namespace GradeComputer
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void generateGrade_Click(object sender, EventArgs e)
+        {
+            double numberofQuarteres = 4;
+
+            double firstGrade = double.Parse(textBox1.Text);
+            double secondGrade = double.Parse(textBox2.Text);
+            double thirdGrade = double.Parse(textBox3.Text);
+            double fourthGrade = double.Parse(textBox4.Text);
+
+            double gradeSum = firstGrade + secondGrade + thirdGrade + fourthGrade;
+            double gradeAverage = gradeSum / numberofQuarteres;
+
+            Form2 gradeSummaryForm = new Form2(gradeAverage);
+            gradeSummaryForm.Show();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void prelim_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            prelim.Text = "";
+
+            // Check if textBox1.Text is a valid number
+            if (double.TryParse(textBox1.Text, out double textBox1Value))
+            {
+                // Compare the parsed value with 75
+                if (textBox1Value >= 75)
+                {
+                    prelim.Text = "Passed";
+                }
+                else
+                {
+                    prelim.Text = "Failed";
+                }
+            }
+            else
+            {
+
+            }
+        }
+        private void midterm_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            midterm.Text = "";
+
+            // Check if textBox1.Text is a valid number
+            if (double.TryParse(textBox2.Text, out double textBox2Value))
+            {
+                // Compare the parsed value with 75
+                if (textBox2Value >= 75)
+                {
+                    midterm.Text = "Passed";
+                }
+                else
+                {
+                    midterm.Text = "Failed";
+                }
+            }
+            else
+            {
+
+            }
+
+        }
+        private void semi_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void final_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
